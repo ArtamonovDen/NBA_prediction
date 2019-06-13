@@ -21,7 +21,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import f1_score, precision_score, recall_score, confusion_matrix, r2_score, mean_squared_error
+from sklearn.metrics import f1_score, precision_score, recall_score, confusion_matrix, r2_score, mean_squared_error, mean_absolute_error
 
 import lightgbm as lgb
 
