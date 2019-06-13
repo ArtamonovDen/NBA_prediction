@@ -672,17 +672,17 @@ def make_model_logistic_regr(x_train, y_train, x_test, y_test, x_test_w, y_test_
     print('Train')
     print(logis.score(x_train,y_train))
     y_pred = logis.predict(x_train)
-    work.check_model(y_pred,y_train)
+    check_model(y_pred,y_train)
     
     print('Test')
     print(logis.score(x_test, y_test))
     y_pred = logis.predict(x_test)
-    work.check_model(y_pred,y_test)
+    check_model(y_pred,y_test)
     
     print('Window Test')
     print(logis.score(x_test_w, y_test_w))
     y_pred = logis.predict(x_test_w)
-    work.check_model(y_pred,y_test_w)
+    check_model(y_pred,y_test_w)
     return logis
 
 def estim_model_boosting(x_train, y_train, x_test, y_test, x_test_w, y_test_w, model):
@@ -692,15 +692,15 @@ def estim_model_boosting(x_train, y_train, x_test, y_test, x_test_w, y_test_w, m
     print('Train')
     y_pred = model.predict(x_train)
     print(accuracy_score(y_train, y_pred))
-    work.check_model(y_pred,y_train)
+    check_model(y_pred,y_train)
     print('Test')
     y_pred = model.predict(x_test)
     print(accuracy_score(y_test, y_pred))
-    work.check_model(y_pred,y_test)
+    check_model(y_pred,y_test)
     print('Window Test')
     y_pred = model.predict(x_test_w)
     print(accuracy_score(y_test_w, y_pred))
-    work.check_model(y_pred,y_test_w)
+    check_model(y_pred,y_test_w)
 
 
 def make_model_lasso_regr(x_train, y_train, x_test, y_test, x_test_w, y_test_w, alpha = 0.1):
@@ -751,7 +751,7 @@ def main(dir_path = "data/all_games_per_seasone/"):
     season_data18 = pd.read_pickle(dir_path + '2018-19.pickle')
 
 
-    #work.build_window_dict(season_data18, season = '2018-19', save = True, f_to_mean=fts,type = 'move_ave')
+    #build_window_dict(season_data18, season = '2018-19', save = True, f_to_mean=fts,type = 'move_ave')
     with open(root_path + "temp/window_games.pickle", 'rb') as f:
         window_games = pickle.load(f)
 
